@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".view.activity.LoginActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_color">
+        
+        <ImageView
+            android:id="@+id/ivLoginContainer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/login_container"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvLoginTitleContainer"
+            app:layout_constraintBottom_toBottomOf="@id/linearLayoutLogin"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:padding="15dp"
+            android:contentDescription="TODO" />
+
+        <TextView
+            android:id="@+id/tvLoginTitleContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="150dp"
+            android:background="@color/box_authentication_color"
+            android:gravity="center"
+            app:layout_constraintVertical_bias="1.0"
+            android:padding="15dp"
+            android:text="Welcome to the Marvel HQ's"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/ivLoginContainer"
+            app:layout_constraintStart_toStartOf="@id/ivLoginContainer"
+            app:layout_constraintTop_toTopOf="parent"
+/>
+
+        <ImageView
+            android:id="@+id/ivLoginContainerAuthentication"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/login_container_authentication"
+            app:layout_constraintStart_toStartOf="@id/ivLoginContainer"
+            app:layout_constraintEnd_toEndOf="@id/ivLoginContainer"
+            app:layout_constraintTop_toBottomOf="@id/tvLoginTitleContainer"
+            app:layout_constraintBottom_toBottomOf="@id/linearLayoutLogin"
+            android:padding="15dp"
+            android:contentDescription="TODO" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@id/ivLoginContainerAuthentication"
+            app:layout_constraintEnd_toEndOf="@id/ivLoginContainer"
+            app:layout_constraintStart_toStartOf="@id/ivLoginContainer"
+            app:layout_constraintTop_toTopOf="@id/ivLoginContainerAuthentication">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilLoginEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp"
+                app:boxBackgroundColor="#FFFFFF"
+                android:textColorHint="@color/marvel_red"
+                android:hint="Email">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etLoginEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:tag="Email"
+                    android:text="dh@digitalhouse.com"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilLoginPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp"
+                app:boxBackgroundColor="#FFFFFF"
+                android:textColorHint="@color/marvel_red"
+                android:hint="Password">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etLoginPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:tag="Password"
+                    android:text="123456"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <CheckBox
+                android:id="@+id/cbLoginRemember"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:buttonTint="@color/marvel_red"
+                android:checked="false"
+                android:text="Remember"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/btLoginLogIn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:text="LOG IN" />
+
+            <Button
+                android:id="@+id/btLoginRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:text="Create account"/>
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

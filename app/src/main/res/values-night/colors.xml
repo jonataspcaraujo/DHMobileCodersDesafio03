@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background_color">#00162C</color>
+    <color name="box_authentication_color">#FFEA2427</color>
+    <color name="marvel_red">#EA2427</color>
+</resources>
