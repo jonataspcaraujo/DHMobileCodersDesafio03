@@ -15,11 +15,11 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         supportActionBar?.hide()
-        initListeners(binding)
+        setupObservables(binding)
 
     }
 
-    private fun initListeners(binding: ActivityLoginBinding) = with(binding) {
+    private fun setupObservables(binding: ActivityLoginBinding) = with(binding) {
         btLoginLogIn.setOnClickListener {
              //Pendente: incluir veriricacao de campos e regras de email e senha. verificar metodos do desafio 02
 //            val intent = Intent(this@LoginActivity, MenuActivity::class.java)
