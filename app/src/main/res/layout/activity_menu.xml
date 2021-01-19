@@ -36,7 +36,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="15dp"
-        tools:listitem="@layout/rv_item_hq"
+        tools:listitem="@layout/rv_item_comic"
         tools:itemCount="1"/>/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

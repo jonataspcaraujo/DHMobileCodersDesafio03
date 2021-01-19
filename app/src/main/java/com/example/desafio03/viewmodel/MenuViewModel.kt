@@ -6,24 +6,24 @@ import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.MutableLiveData
 import com.example.desafio03.api.ResponseAPI
 import com.example.desafio03.business.MarvelMenuBusiness
-import com.example.desafio03.model.HqItem
+import com.example.desafio03.model.Comic
 import kotlinx.coroutines.launch
 
 class MenuViewModel: ViewModel() {
 
-    val onResultHqs: MutableLiveData<HqItem> = MutableLiveData()
+    val onResultComics: MutableLiveData<Comic> = MutableLiveData()
     val onResultFailure: MutableLiveData<String> = MutableLiveData()
 
     private val business by lazy {
         MarvelMenuBusiness()
     }
 
-    fun getHQs() {
+    fun getComics() {
         viewModelScope.launch {
-            when (val response = business.getHQs()){
+            when (val response = business.getComics()){
                 is ResponseAPI.Success-> {
-                    onResultHqs.postValue(
-                        response.data as HqItem
+                    onResultComics.postValue(
+                        response.data as Comic
                     )
                 }
                 is ResponseAPI.Error ->{

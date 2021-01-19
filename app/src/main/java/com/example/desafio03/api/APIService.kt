@@ -5,6 +5,7 @@ import com.example.desafio03.util.Constants.APIMarvel.API_KEY_NAME
 import com.example.desafio03.util.Constants.APIMarvel.API_PRIVATE_KEY_VALUE
 import com.example.desafio03.util.Constants.APIMarvel.API_PUBLIC_KEY_VALUE
 import com.example.desafio03.util.Constants.APIMarvel.API_TS_NAME
+import com.example.desafio03.util.Constants.APIMarvel.BASE_URL
 import com.example.desafio03.util.Constants.APIMarvel.QUERY_CHARACTER_NAME
 import com.example.desafio03.util.Constants.APIMarvel.QUERY_CHARACTER_VALUE
 import com.example.desafio03.util.Constants.APIMarvel.QUERY_FORMAT_NAME
@@ -13,7 +14,6 @@ import com.example.desafio03.util.Constants.APIMarvel.QUERY_FORMAT_TYPE_VALUE
 import com.example.desafio03.util.Constants.APIMarvel.QUERY_FORMAT_VALUE
 import com.example.desafio03.util.Constants.APIMarvel.QUERY_ORDER_BY_NAME
 import com.example.desafio03.util.Constants.APIMarvel.QUERY_ORDER_BY_VALUE
-import com.example.desafio03.util.Constants.APIMarvel.URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -29,7 +29,7 @@ object APIService {
 
     private fun getMarvelAPIClient(): Retrofit {
         return Retrofit.Builder()
-                .baseUrl(URL)
+                .baseUrl(BASE_URL)
                 .client(getInterceptorMarvelClient())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
@@ -42,12 +42,11 @@ object APIService {
 
         val interceptor = OkHttpClient.Builder()
                 .connectTimeout(5,TimeUnit.SECONDS)
-                .readTimeout(10,TimeUnit.SECONDS)
-                .writeTimeout(10,TimeUnit.SECONDS)
+                .readTimeout(5,TimeUnit.SECONDS)
+                .writeTimeout(5,TimeUnit.SECONDS)
                 .addInterceptor(logginInterceptor)
                 .addInterceptor { chain ->
-                    val newRequest = chain.request().newBuilder()
-                            .build()
+                    val newRequest = chain.request().newBuilder().build()
                     chain.proceed(newRequest)
                 }.addInterceptor { chain ->
                     val timestamp = System.currentTimeMillis()

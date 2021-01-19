@@ -5,7 +5,7 @@ import android.provider.ContactsContract
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class HqItem(
+data class Comic(
         val attributionHTML: String?,
         val attributionText: String?,
         val code: Int?,

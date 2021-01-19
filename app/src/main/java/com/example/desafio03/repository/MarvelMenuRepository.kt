@@ -5,16 +5,19 @@ import com.example.desafio03.api.ResponseAPI
 
 class MarvelMenuRepository {
 
-    suspend fun getHQs():ResponseAPI{
+    suspend fun getComics():ResponseAPI{
         return try{
-            val response = marvelAPI.getHQs()
+            val response = marvelAPI.getComics()
+
             if(response.code() == 200) {
+                ResponseAPI.Success(response.body())
+            }else if (response.isSuccessful) {
                 ResponseAPI.Success(response.body())
             } else{
                 if (response.code() == 404){
-                    ResponseAPI.Error("Dados não encontrados")
+                    ResponseAPI.Error("Dados não disponíveis. Erro: 404 ${response.code()}")
                 } else{
-                    ResponseAPI.Error("Falha no carregamento dos dados")
+                    ResponseAPI.Error("Dados não disponíveis. Erro: ${response.code()}")
                 }
             }
         }catch (exception: Exception){

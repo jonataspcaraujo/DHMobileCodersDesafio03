@@ -2,12 +2,12 @@ package com.example.desafio03.util
 
 class Constants {
     object APIMarvel{
-        const val URL = "https://gateway.marvel.com:443/v1/public/"
+        const val BASE_URL = "https://gateway.marvel.com:443/v1/public/"
         const val API_TS_NAME = "ts"
         const val API_KEY_NAME = "apikey"
         const val API_HASH_NAME = "hash"
-        const val API_PUBLIC_KEY_VALUE = "6eb7e8896ec5850c52515a8a23ee97f0"
-        const val API_PRIVATE_KEY_VALUE = "0dd0c16fedb8a02985977eafca66b49f5e6a526f"
+        const val API_PUBLIC_KEY_VALUE = "293a2b82340c11ba84ef61de4104f190"
+        const val API_PRIVATE_KEY_VALUE = "9ac20bfb6075dd43cf17221a49c974478e87ded4"
         const val QUERY_FORMAT_NAME = "format"
         const val QUERY_FORMAT_VALUE = "comic"
         const val QUERY_FORMAT_TYPE_NAME = "formatType"
@@ -18,9 +18,9 @@ class Constants {
         const val QUERY_CHARACTER_VALUE = "1009718"
     }
 
-//    object Intent {
-//        const val KEY_COMIC_RESULT = "comic"
-//        const val KEY_COMIC_THUMBNAIL = "thumbnail"
-//    }
+    object Intent {
+        const val KEY_COMIC_RESULT = "comics"
+        const val KEY_COMIC_THUMBNAIL = "thumbnail"
+    }
 
 }
