@@ -1,7 +1,6 @@
 package com.example.desafio03.model
 
 import android.os.Parcelable
-import android.provider.ContactsContract
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
