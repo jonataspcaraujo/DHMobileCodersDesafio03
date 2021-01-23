@@ -22,7 +22,6 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun setupObservables(binding: ActivityRegisterBinding) = with(binding) {
         btRegisterSave.setOnClickListener {
-            //Pendente: incluir veriricacao de campos e regras de email e senha. verificar metodos do desafio 02
             val intent = Intent(this@RegisterActivity, MenuActivity::class.java)
             startActivity(intent)
         }

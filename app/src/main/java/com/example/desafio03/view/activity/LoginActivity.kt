@@ -22,8 +22,8 @@ class LoginActivity : AppCompatActivity() {
     private fun setupObservables(binding: ActivityLoginBinding) = with(binding) {
         btLoginLogIn.setOnClickListener {
              //Pendente: incluir veriricacao de campos e regras de email e senha. verificar metodos do desafio 02
-//            val intent = Intent(this@LoginActivity, MenuActivity::class.java)
-//            startActivity(intent)
+            val intent = Intent(this@LoginActivity, MenuActivity::class.java)
+            startActivity(intent)
         }
         btLoginRegister.setOnClickListener {
             val intent = Intent(this@LoginActivity, RegisterActivity::class.java)

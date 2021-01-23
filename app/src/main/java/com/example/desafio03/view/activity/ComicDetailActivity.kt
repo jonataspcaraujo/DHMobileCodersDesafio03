@@ -40,6 +40,9 @@ class ComicDetailActivity : AppCompatActivity() {
             intent.putExtra(KEY_COMIC_IMAGE,comic?.thumbnail)
             startActivity(intent)
         }
+        binding.ibHqDetailbackButton.setOnClickListener {
+            onBackPressed()
+        }
     }
     private fun initComponents() {
 
