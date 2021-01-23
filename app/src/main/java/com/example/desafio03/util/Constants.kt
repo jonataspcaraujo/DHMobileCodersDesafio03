@@ -20,7 +20,7 @@ class Constants {
 
     object Intent {
         const val KEY_COMIC_RESULT = "comics"
-        const val KEY_COMIC_THUMBNAIL = "thumbnail"
+        const val KEY_COMIC_IMAGE = "image"
     }
 
 }

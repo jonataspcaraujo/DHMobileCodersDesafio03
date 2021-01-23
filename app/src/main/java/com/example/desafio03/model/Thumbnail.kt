@@ -7,4 +7,8 @@ import kotlinx.parcelize.Parcelize
 data class Thumbnail(
         val extension: String,
         var path: String
-): Parcelable
+): Parcelable{
+    fun getThumb():String{
+        return "$path.$extension"
+    }
+}

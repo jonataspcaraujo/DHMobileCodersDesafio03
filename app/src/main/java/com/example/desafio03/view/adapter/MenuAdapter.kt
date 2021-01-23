@@ -15,7 +15,6 @@ import com.example.desafio03.view.activity.MenuActivity
 
 
 class MenuAdapter(
-        private val menuView: MenuActivity,
         private val comicList: List<Result>,
         private val comicOnClicked: (Result) -> Unit
 ) : RecyclerView.Adapter<MenuAdapter.ViewHolder>() {
@@ -41,7 +40,8 @@ class MenuAdapter(
             Glide.with(itemView.context)
                     .load("${comic.thumbnail?.path?.replace("http","https")}.${comic.thumbnail?.extension}")
                     .into(ivRvItemHq)
-            val issueNumber = comic.issueNumber.toString()
+
+            val issueNumber = comic.issueNumber?.toInt().toString()
             tvRvItemHqId.text = "#$issueNumber"
 
            itemView.setOnClickListener {

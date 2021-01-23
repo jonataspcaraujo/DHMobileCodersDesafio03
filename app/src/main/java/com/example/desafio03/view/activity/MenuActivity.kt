@@ -30,7 +30,8 @@ class MenuActivity : AppCompatActivity() {
         setupObservables(binding)
     }
 
-//
+
+
     private fun setupObservables(binding: ActivityMenuBinding) {
         // Iniciando o menu de HQs, quando ha resultados na consulta API
         viewModel.onResultComics.observe(this,{
@@ -47,7 +48,7 @@ class MenuActivity : AppCompatActivity() {
     private fun setupRecycleView(lComics: List<Result>){
         binding.rvMenuHQList.apply{
             layoutManager = GridLayoutManager(this@MenuActivity,3)
-            adapter = MenuAdapter(this.context as MenuActivity,lComics){
+            adapter = MenuAdapter(lComics){
                 // adapter
                 val intent = Intent(this@MenuActivity, ComicDetailActivity::class.java).apply {
                     putExtra(KEY_COMIC_RESULT,it)
